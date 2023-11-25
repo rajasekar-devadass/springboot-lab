@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.fita.lab.BookController" scope="PROTOTYPE">
+        <constructor-arg index="0" value="30"/>
+    </bean>
+    <bean name="studCont" class="com.fita.lab.StudentController">
+        <constructor-arg index="0" value="3"/>
+    </bean>
+
+<!--    <bean class="LabObjectCreationXmlApplication">-->
+<!--        <property name="studentController" ref="studCont"></property>-->
+<!--    </bean>-->
+</beans>
