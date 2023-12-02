@@ -1,6 +1,7 @@
 package com.lab;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,8 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BeanLifeCycleApplication implements CommandLineRunner {
 
     @Autowired
+    @Qualifier("a")
     public A instance1_A;
     @Autowired
+    @Qualifier("duplicate_instance_of_A")
     public A instance2_A;
 
     @Autowired
@@ -31,6 +34,7 @@ public class BeanLifeCycleApplication implements CommandLineRunner {
         }
         System.out.println("hashcode of instance 1 : " + instance1_A.hashCode());
         System.out.println("hashcode of instance 2 : " + instance2_A.hashCode());
+
 
         System.out.println("\n###############################################\n");
 

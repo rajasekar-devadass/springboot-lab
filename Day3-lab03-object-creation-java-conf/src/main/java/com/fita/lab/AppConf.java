@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Configuration;
 public class AppConf {
 
     @Bean
-    public BookController createBookController() {
+    public BookController a() {
         return new BookController(30);
     }
 
     @Bean
-    public StudentController createStudentController() {
+    public StudentController b() {
         return new StudentController(3);
     }
 }

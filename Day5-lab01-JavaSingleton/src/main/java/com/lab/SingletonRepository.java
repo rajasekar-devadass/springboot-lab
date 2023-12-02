@@ -9,6 +9,7 @@ public class SingletonRepository {
     }
 
     public static SingletonRepository getInstance() {
+        //Avoid waiting for the lock
         if (instance == null) {
             synchronized (SingletonRepository.class) {
                 if (instance == null) {

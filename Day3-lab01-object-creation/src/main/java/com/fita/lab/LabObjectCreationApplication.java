@@ -11,10 +11,10 @@ import java.util.Scanner;
 public class LabObjectCreationApplication implements CommandLineRunner {
 
 	@Autowired
-	public StudentController studentController;
+	public StudentController studentControllerObj;
 
 	@Autowired
-	public BookController bookController;
+	public BookController bookControllerObj;
 
 	public static void main(String[] args) {
 		SpringApplication.run(LabObjectCreationApplication.class, args);
@@ -33,11 +33,11 @@ public class LabObjectCreationApplication implements CommandLineRunner {
 			int userChoice = inputScanner.nextInt();
 			switch (userChoice) {
 				case 1: {
-					studentController.manageStudent(inputScanner);
+					studentControllerObj.manageStudent(inputScanner);
 					break;
 				}
 				case 2: {
-					bookController.manageBooks(inputScanner);
+					bookControllerObj.manageBooks(inputScanner);
 					break;
 				}
 				case 3: {
