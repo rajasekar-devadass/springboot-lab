@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+</head>
+<body>
+
+<div>
+    <a href="/addStudentFormAction">Add new book</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th> ID</th>
+        <th> Name</th>
+        <th> Dept</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${students.empty}">
+        <td colspan="3"> No Students Available</td>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td><span th:text="${student.id}"> Id </span></td>
+        <td><span th:text="${student.name}"> Name </span></td>
+        <td><span th:text="${student.dept}"> Dept </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
