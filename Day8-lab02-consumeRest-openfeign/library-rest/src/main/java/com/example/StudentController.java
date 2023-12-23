@@ -3,6 +3,7 @@ package com.example;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -67,6 +68,14 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
+        Iterator<Student> iterator = studentList.iterator();
+        while (iterator.hasNext()){
+            Student obj = iterator.next();
+            if(obj.getId() == id){
+                iterator.remove();
+            }
+        }
+
         studentList.remove(id);
     }
 

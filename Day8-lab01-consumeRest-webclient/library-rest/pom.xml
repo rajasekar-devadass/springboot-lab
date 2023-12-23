@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>library-rest</artifactId>
+	<artifactId>Day8-lab01-consumeRest-webclient-library-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>library-rest</name>
 	<description>Demo project for Spring Boot</description>
