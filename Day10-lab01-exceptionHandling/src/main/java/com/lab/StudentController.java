@@ -35,6 +35,13 @@ public class StudentController {
         return new ResponseEntity<>(student, HttpStatus.CREATED);
     }
 
+//    @PostMapping("/")
+//    public Student add(@RequestBody @Valid Student student) {
+//        student.setId(studentList.size());
+//        studentList.add(student);
+//        return student;
+//    }
+
     @PutMapping("/")
     public ResponseEntity<Student> put(@RequestBody Student inputStudent) {
         for (int index = 0; index < studentList.size(); index++) {

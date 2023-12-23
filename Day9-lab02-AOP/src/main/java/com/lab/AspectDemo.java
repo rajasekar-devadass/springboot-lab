@@ -2,6 +2,7 @@ package com.lab;
 
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -19,6 +20,21 @@ public class AspectDemo {
     @Before(value = "execution(* com.lab.StudentController.*(..))")
     public void beforeAdvice(JoinPoint joinPoint) {
         logger.trace("Before method:" + joinPoint.getSignature());
+        logger.trace(Arrays.toString(joinPoint.getArgs()));
+    }
+
+//    @Around(value = "execution(* com.lab.StudentController.*(..))")
+//    public void aroundAdvice(JoinPoint joinPoint) {
+//        logger.trace("Before method:" + joinPoint.getSignature());
+//        logger.trace(Arrays.toString(joinPoint.getArgs()));
+////        joinPoint.getTarget().
+//        logger.trace("After method:" + joinPoint.getSignature());
+//        logger.trace(Arrays.toString(joinPoint.getArgs()));
+//    }
+
+    @After(value = "execution(* com.lab.*.*(..))")
+    public void afterAdvice(JoinPoint joinPoint) {
+        logger.trace("After method:" + joinPoint.getSignature());
         logger.trace(Arrays.toString(joinPoint.getArgs()));
     }
 }

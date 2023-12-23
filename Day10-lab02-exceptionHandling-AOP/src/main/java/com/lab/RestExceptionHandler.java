@@ -25,7 +25,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
             String errorMsg = fieldError.getDefaultMessage();
             errors.put(fieldName, errorMsg);
         }
-        errors.put("a", "aop");
+//        errors.put("a", "aop");
         return new ResponseEntity<Object>(errors, HttpStatus.BAD_REQUEST);
     }
 
